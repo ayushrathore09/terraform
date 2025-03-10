@@ -40,8 +40,8 @@ resource "aws_security_group" "tf_SG" {
 }
 
 resource "aws_instance" "ec2_instance" {
-  ami = "var.ami_id"
-  instance_type = "var.instance_type"
+  ami = var.ami_id
+  instance_type = var.instance_type
   key_name = aws_key_pair.key_pair.key_name
   security_groups = [aws_security_group.tf_SG.name]
   tags = {
