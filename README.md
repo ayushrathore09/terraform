@@ -9,4 +9,6 @@ creating infra on AWS uisng terraform using one click.
 
 > tf plan
 > tf apply --auto-approve.
+> tf state list
+> tf destroy --target="resource name form state list"
 
