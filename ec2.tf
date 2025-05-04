@@ -11,7 +11,7 @@ resource "aws_default_vpc" "my_vpc" {
 
 # security group
 resource "aws_security_group" "my_sg" {
-  name        = "terraform_sg"  
+  name        = "terraform_sg"
   description = "Allow user to connect"
   vpc_id      = aws_default_vpc.my_vpc.id
 
@@ -42,14 +42,14 @@ resource "aws_security_group" "my_sg" {
 
 #ec2 instance
 resource "aws_instance" "my_ec2" {
-  ami             = var.ec2_ami # Replace with your desired AMI ID
+  ami             = var.ec2_ami           # Replace with your desired AMI ID
   instance_type   = var.ec2_instance_type # Replace with your desired instance type
   key_name        = aws_key_pair.my_key.key_name
   security_groups = [aws_security_group.my_sg.name]
-  user_data = file("install_nginx.sh")
-    tags = {
-        Name = "terraform-ec2-instance"
-    }
+  user_data       = file("install_nginx.sh")
+  tags = {
+    Name = "terraform-ec2-instance"
+  }
   root_block_device {
     volume_size = 8
     volume_type = "gp3"
