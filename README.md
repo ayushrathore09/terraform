@@ -4,6 +4,7 @@ when we initialize the terraform it downloads the required provioders in .terraf
 
 # providers.tf:
 here we can modify the region in which particular region we want to provision the resources.
+- After installing the providers install the AWS CLI and do AWS configure.
 
 # variables.tf:
 here we are declaring the variable, which we are passing in main.tf (ec2.tf) instead of passing hardcoded values.
