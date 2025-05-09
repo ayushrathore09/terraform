@@ -9,3 +9,8 @@ variable "ec2_ami" {
   type        = string
   default     = "ami-084568db4383264d4"
 }
+
+variable "env"{
+  type = string
+  default = "prod"
+}
